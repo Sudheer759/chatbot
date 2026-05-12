@@ -1,0 +1,5 @@
+Flask
+langchain
+langchain-groq
+python-dotenv
+langchain-community

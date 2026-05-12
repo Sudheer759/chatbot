@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Analyzer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Markdown Parser (Marked.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- FontAwesome Elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="blob-c">
+        <div class="shape blob"></div>
+        <div class="shape blob2"></div>
+    </div>
+
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-info">
+                <div class="bot-avatar">
+                   <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="bot-details">
+                    <h1>Academic Assistant</h1>
+                    <span class="status"><span class="dot"></span> Online</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="settings-btn" title="Settings"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-box" id="chat-box">
+            <div class="message bot-message ai-intro delay-fade-in">
+                <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                <div class="message-content">
+                    <p>Hello! I am your <strong>Student Performance Analyzer</strong>. 🎓</p>
+                    <p>Provide me with your <strong>marks</strong>, <strong>attendance percentage</strong>, and <strong>study hours per day</strong> so I can analyze your academic standing.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="suggestions-container" id="suggestions">
+                <button type="button" class="suggestion-chip">Marks: 85, 90, 78 | Att: 80% | Hours: 3</button>
+                <button type="button" class="suggestion-chip">Marks: 40, 55, 60 | Att: 65% | Hours: 1</button>
+                <button type="button" class="suggestion-chip">Analyze my performance</button>
+            </div>
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off" required>
+                <button type="submit" id="send-btn" class="send-btn pulse-anim">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
